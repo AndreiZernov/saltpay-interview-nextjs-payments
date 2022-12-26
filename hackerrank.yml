@@ -1,0 +1,34 @@
+version: 1.0
+configuration:
+  has_webserver: true
+  scoring:
+    command: yarn install && rm -rf ./junit.xml && yarn jest test --verbose --env=jsdom --testResultsProcessor ./node_modules/jest-junit
+    files:
+      - junit.xml
+    testcase_weights: 
+      Payments System App Initialization payments list should be empty: 0.05
+      Payments System App Initialization balance should be 0: 0.05
+      Payments System Balance Actions should be updated with 100 EUR: 0.05
+      Payments System Balance Actions should be updated with 100 GBP: 0.05
+      Payments System Balance Actions should be updated with 100 ISK: 0.05
+      Payments System Balance Actions should be updated more then 1 times for the same currency: 0.05
+      Payments System Balance Actions Balance Input Validation should not be updated if currency not supported: 0.05
+      Payments System Balance Actions Balance Input Validation should not be updated if amount is not a number: 0.05
+      Payments System Balance Actions Balance Input Validation should not be updated if amount is negative: 0.05
+      Payments System Payments should be processed with 20 EUR: 0.05
+      Payments System Payments Payments Input Validation should not be processed if not enough balance: 0.05
+      Payments System Payments Payments Input Validation should not be processed if currency is different from balance: 0.05
+      Payments System Payments Payments Input Validation should not be processed if currency is not supported: 0.05
+      Payments System Payments Payments Input Validation should not be processed if amount is 0: 0.05
+      Payments System Payments Payments Input Validation should not be processed if amount is negative: 0.05
+      Payments System Multiple Payments should be processed with the same currency as amount: 0.05
+      Payments System Multiple Payments should ignore all payments with different currency then amount: 0.05
+  readonly_paths:
+    - src/pages/app.test.tsx
+  ide_config:
+    default_open_files:
+      - src/pages/index.tsx
+    project_menu:
+      run: yarn dev
+      install: yarn install
+      test: yarn test
