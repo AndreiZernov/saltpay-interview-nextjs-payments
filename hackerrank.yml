@@ -6,7 +6,7 @@ configuration:
     files:
       - junit.xml
     testcase_weights:
-      App Initialization inputs and buttons should be rendered: 0.02
+      App Initialization inputs and buttons should be rendered: 0.04
       App Initialization balances and payments lists should be empty: 0.04
       Payments System Balance Actions should be able to update the EUR balance: 0.05
       Payments System Balance Actions should be able to update the EUR balance and round up to two decimals : 0.05
