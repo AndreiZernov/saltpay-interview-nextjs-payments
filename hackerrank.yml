@@ -25,7 +25,7 @@ configuration:
       Payments System Payments Actions Payments Input Validation should not be processed if the currency is different from balances: 0.02
       Payments System Payments Actions Payments Input Validation should not be processed if payment amount is 0 or below: 0.02
   readonly_paths:
-    - src/__tests__/app.test.tsx
+    - __tests__/app.test.tsx
   ide_config:
     default_open_files:
       - src/pages/index.tsx
