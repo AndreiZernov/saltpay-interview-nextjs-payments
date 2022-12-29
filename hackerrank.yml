@@ -5,24 +5,25 @@ configuration:
     command: yarn install && rm -rf ./junit.xml && yarn jest test --verbose --env=jsdom --testResultsProcessor ./node_modules/jest-junit
     files:
       - junit.xml
-    testcase_weights: 
-      Payments System App Initialization payments list should be empty: 0.05
-      Payments System App Initialization balance should be 0: 0.05
-      Payments System Balance Actions should be updated with 100 EUR: 0.05
-      Payments System Balance Actions should be updated with 100 GBP: 0.05
-      Payments System Balance Actions should be updated with 100 ISK: 0.05
-      Payments System Balance Actions should be updated more then 1 times for the same currency: 0.05
-      Payments System Balance Actions Balance Input Validation should not be updated if currency not supported: 0.05
-      Payments System Balance Actions Balance Input Validation should not be updated if amount is not a number: 0.05
-      Payments System Balance Actions Balance Input Validation should not be updated if amount is negative: 0.05
-      Payments System Payments should be processed with 20 EUR: 0.05
-      Payments System Payments Payments Input Validation should not be processed if not enough balance: 0.05
-      Payments System Payments Payments Input Validation should not be processed if currency is different from balance: 0.05
-      Payments System Payments Payments Input Validation should not be processed if currency is not supported: 0.05
-      Payments System Payments Payments Input Validation should not be processed if amount is 0: 0.05
-      Payments System Payments Payments Input Validation should not be processed if amount is negative: 0.05
-      Payments System Multiple Payments should be processed with the same currency as amount: 0.05
-      Payments System Multiple Payments should ignore all payments with different currency then amount: 0.05
+    testcase_weights:
+      App Initialization inputs and buttons should be rendered: 0.02
+      App Initialization balances and payments lists should be empty: 0.04
+      Payments System Balance Actions should be able to update the EUR balance: 0.05
+      Payments System Balance Actions should be able to update the EUR balance and round up to two decimals : 0.05
+      Payments System Balance Actions should be able to update the GBP balance: 0.05
+      Payments System Balance Actions Multiple Balances should be able to update the balances: 0.10
+      Payments System Balance Actions Balance Input Validation should not be updated if currency not supported: 0.02
+      Payments System Balance Actions Balance Input Validation should not be updated if amount is not a number: 0.02
+      Payments System Balance Actions Balance Input Validation should not be updated if amount is negative number: 0.02
+      Payments System Payments Actions should be processed account balance and one payment with 1/2 fee: 0.10
+      Payments System Payments Actions should be processed account balance and one payment with 1/3 fee: 0.10
+      Payments System Payments Actions should be processed account balance and one payment and round up to two decimals: 0.05
+      Payments System Payments Actions Multiple Payments should be processed with the same currency as balance: 0.10
+      Payments System Payments Actions Multiple Payments should be processed for Multiple Balances: 0.10
+      Payments System Payments Actions Multiple Payments should ignore all payments with different currency then balances: 0.10
+      Payments System Payments Actions Payments Input Validation should not be processed if balance is not enough: 0.02
+      Payments System Payments Actions Payments Input Validation should not be processed if the currency is different from balances: 0.02
+      Payments System Payments Actions Payments Input Validation should not be processed if payment amount is 0 or below: 0.02
   readonly_paths:
     - src/__tests__/app.test.tsx
   ide_config:
