@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 16px;
+  color: var(--colors-white);
+  background-color: var(--colors-primary-900);
+  border-top: 1px solid var(--colors-primary-50);
+  box-shadow: 0px 4px 4px var(--colors-primary-50);
+}

@@ -24,7 +24,7 @@ configuration:
       Payments System Multiple Payments should be processed with the same currency as amount: 0.05
       Payments System Multiple Payments should ignore all payments with different currency then amount: 0.05
   readonly_paths:
-    - src/pages/app.test.tsx
+    - src/__tests__/app.test.tsx
   ide_config:
     default_open_files:
       - src/pages/index.tsx
