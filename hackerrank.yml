@@ -9,7 +9,7 @@ configuration:
       App Initialization inputs and buttons should be rendered: 0.04
       App Initialization balances and payments lists should be empty: 0.04
       Payments System Balance Actions should be able to update the EUR balance: 0.05
-      Payments System Balance Actions should be able to update the EUR balance and round up to two decimals : 0.05
+      Payments System Balance Actions should be able to update the EUR balance and round up to two decimals: 0.05
       Payments System Balance Actions should be able to update the GBP balance: 0.05
       Payments System Balance Actions Multiple Balances should be able to update the balances: 0.10
       Payments System Balance Actions Balance Input Validation should not be updated if currency not supported: 0.02
