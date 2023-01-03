@@ -56,15 +56,9 @@ function Home() {
     parsedBalances.forEach((b) => {
       const currency = balances.find((c) => c.currency === b.currency);
       if (!!currency && b.amount > 0) {
-        processedBalances.push({
-          currency: b.currency,
-          amount: b.amount + currency.amount,
-        });
+        processedBalances.push({ currency: b.currency, amount: b.amount + currency.amount });
       } else {
-        processedBalances.push({
-          currency: b.currency,
-          amount: b.amount,
-        });
+        processedBalances.push({ currency: b.currency, amount: b.amount });
       }
     });
     setBalances(processedBalances);
