@@ -1,27 +1,32 @@
 # Overview
 
-SaltPay is acquiring merchants across Europe who are paid out daily, with the funds coming from SaltPay’s bank account.
+As an international payments provider, SaltPay handles customer transactions on behalf of merchants. Each day we pay our merchants the value of their transactions from SaltPay's bank account - minus a processing fee - in a process known as "settling".
 
-Your objective is to write an App that will support a part of the payment system, it should allow input of the balances, and payments and be able to process them accordingly to business rules.
+Your objective is to simulate the flow of a settlement by creating a simple web page that supports both the input of incoming balance top-ups to our bank account, as well as outgoing payments to merchants.
 
-<b>Business Rules:</b>
+# Acceptance Criteria
 
-- Only GBP and EUR currencies should be supported
-- Before paying out, deduct processing fees for each payment as a % of the amount being processed: 1/3rd of a percent for GBP, 1/2 a percent for the other currencies
-- For each balance (`balance` -> `currency`), process payments that can be paid based on the funds available
-- When paying merchants, amounts should always be rounded up (e.g. `43.545` -> `43.55`, `43.512` -> `43.52`, `43.5102` -> `43.52`)
+<b>Business Logic:</b>
 
-## The app should implement the following functionalities:
+- The page should support two currencies (GBP and EUR), with each currency having its own total balance
+- When processing payments, fees should be deducted from each payment as a percentage of the amount being processed:
+- For payments in GBP - one third of a percent of the total payment amount
+- For payments in EUR - one half of a percent of the total payment amount
+- Only payments that can be paid in full from the corresponding currency's balance should be processed successfully
+- The final value of a payment (post processing fee) should always be rounded up to two decimal places
 
-- The initial view should display two input fields and two buttons for Balances and Payments. The output should show No balances and No payments
-- Filling the balances input and clicking Top Up should reflect the right balance in the output
-- Filling the payments input and clicking Process Payments should reflect the right payments in the output
+<b>Functionality</b>
 
-## Technical details:
+- The page should include two forms with an input field and submit button - one for entering balance top-ups and one for entering payments
+- Balance top-ups should be entered in the format of "currency:amount" (e.g. GBP:100,EUR:200)
+- Payments should be entered in the format of "ID:currency:amount" (e.g. 1:EUR:5.76,2:GBP:32.10)
+- The page should render a list of balances and a list of payments, which should display "No balances" / "No payments" when empty
+- Entering a balance top-up should update the total balance for that currency in the list
+- Details of each payment (including the payment ID and currency) should be added to the list of payments when entered
 
-- <b>Balance Fields</b>: Currency, and amount. (e.g. `GBP:100`,`EUR:200`)
-- <b>Payments Fields</b>: Payment ID, currency, and amount. (e.g. `743:EUR:5.76`, `932:GBP:32.10`)
-- <b>Testing</b>: The following `data-testid` attributes are required in the component for the tests to pass:
+# Technical details:
+
+There is a suite of tests that will run against your code to validate your implementation. In order for these tests to work, they rely on your UI components having these specific data-testid attributes:
 
 <table>
   <tr>
