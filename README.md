@@ -10,8 +10,8 @@ Your objective is to simulate the flow of a settlement by creating a simple web 
 
 - The page should support two currencies (GBP and EUR), with each currency having its own total balance
 - When processing payments, fees should be deducted from each payment as a percentage of the amount being processed:
-- For payments in GBP - one third of a percent of the total payment amount
-- For payments in EUR - one half of a percent of the total payment amount
+  - For payments in GBP - one third of a percent of the total payment amount
+  - For payments in EUR - one half of a percent of the total payment amount
 - Only payments that can be paid in full from the corresponding currency's balance should be processed successfully
 - The final value of a payment (post processing fee) should always be rounded up to two decimal places
 
